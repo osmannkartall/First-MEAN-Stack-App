@@ -4,11 +4,9 @@
 -	CRUD operasyonlarında kullanılacak bilgiler ücretsiz MongoDB Atlas cloudunda saklanmıştır.
 
 -	Kodları çalıştırmadan önce:
-	•	‘tasks.js’ dosyasındaki ‘url’ değişkenini ayarlamanız gerekir. url değişkenine atayacağınız bağlantı string’inin nasıl elde edildiğine buradan bakabilirsiniz: https://docs.atlas.mongodb.com/connect-to-cluster/ 
-
-  •	Aldığınız MongoDB Atlas hesabında bir cluster oluşturup bu cluster’ın ismini ‘dbName’ değişkenine atamalısınız.
-	
-  •	Son olarak, cluster’ınızda bir collection oluşturup onun da ismini ‘cNameAddress’ değişkenine atamalısınız.
+  1. ‘tasks.js’ dosyasındaki ‘url’ değişkenini ayarlamanız gerekir. url değişkenine atayacağınız bağlantı string’inin nasıl elde edildiğine buradan bakabilirsiniz: https://docs.atlas.mongodb.com/connect-to-cluster/ 
+  2. Aldığınız MongoDB Atlas hesabında bir cluster oluşturup bu cluster’ın ismini ‘dbName’ değişkenine atamalısınız.
+  3. Son olarak, cluster’ınızda bir collection oluşturup onun da ismini ‘cNameAddress’ değişkenine atamalısınız.
 
 -	Arayüzdeki kullanıcı interaksiyonları ile sunucuya istekler gönderilir ve sunucu bu istekleri handle edip(tasks.js’e bakınız.) gerekli bilgi alışverişini arayüz ile veri tabanı arasında sağlar.
 
