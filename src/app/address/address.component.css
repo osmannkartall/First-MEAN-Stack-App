@@ -1,0 +1,63 @@
+.table-title .add-new-address {
+    float: right;
+    height: 30px;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: none;
+    min-width: 100px;
+    border-radius: 0px;
+    line-height: 13px;
+}
+
+.formStyling{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding-bottom: 15px;
+}
+
+.topPart{
+  border-top: 5px solid #f49542;
+}
+
+.add-addr{
+  float: right;
+}
+
+.tableStyling{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.update, .delete {
+  cursor: pointer;
+}
+
+table.table td a.update:hover {
+  color: #007bff
+  /* color: #FFC107; */
+}
+
+table.table td a.delete:hover {
+  color: #dc3545
+  /* color: rebeccapurple; */
+}
+
+.reset-btn {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  height: 100%;
+  font-size: 16px;
+}
+
+.reset-btn:hover {
+  color: #dc3545
+}

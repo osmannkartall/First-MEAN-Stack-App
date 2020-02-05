@@ -1,0 +1,30 @@
+header {
+    background: #ed760e;
+  }
+  header .logo {
+    font-weight: bold;
+    color:rgb(255, 235, 194);
+    text-decoration: none !important;
+  }
+
+  header nav {
+    justify-self: right;
+  }
+  header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  header nav ul li {
+    float: left;
+  }
+  header nav ul li a {
+    padding: 1.5em;
+    font-size: 1em;
+    color: rgb(255, 235, 194);
+    text-decoration: none !important;
+  }
+  header nav ul li a:hover {
+    color: rgb(255, 255, 235);
+  }
+

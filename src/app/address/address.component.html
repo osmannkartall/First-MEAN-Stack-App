@@ -1,0 +1,122 @@
+<div class="row">
+  <h1>Customers' Addresses</h1>
+</div>
+<div class="row">
+  <h3 style="font-weight: 200">You can create new adresses and save them.</h3>
+</div>
+<form [formGroup] = "addressForm" (ngSubmit)="onSubmit(addressForm.value)">
+  <div class="row formStyling">
+    <div class="col">
+      <div class="row topPart">
+        <div class="form-group col-md-4">
+          <label for="NameInput">Name</label>
+          <input class="form-control form-control-sm" type="text" placeholder="Enter Name Here" formControlName="name">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="SurnameInput">Surname</label>
+          <input class="form-control form-control-sm" type="text" placeholder="Enter Surname Here" formControlName="surname">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="PhoneNumbersInput">Phone Numbers</label>
+          <div class="input-group mb-3 input-group-sm">
+            <select class="form-control" #phoneOpt>
+              <option value="" disabled selected>Your Phones</option>
+            </select>
+            <input type="text" class="form-control" placeholder="Enter Phone" formControlName="phoneNumbers">
+            <div class="input-group-prepend">
+              <button class="btn btn-primary" type="button" (click)="addPhone()">+</button>
+              <button type="button" class="btn btn-danger" (click)="deletePhone()">X</button>
+            </div>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+              * Type the phone and click X button to delete it.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div formGroupName="address" class="row topPart">
+        <div class="form-group col-md-3">
+          <label for="CityInput">Address</label>
+          <input class="form-control form-control-sm" type="text" placeholder="Enter City Here" formControlName="city">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="TownInput" style="visibility: hidden">Town</label>
+          <input class="form-control form-control-sm" type="text" placeholder="Enter Town Here" formControlName="town" >
+        </div>
+        <div class="form-group col-md-3">
+          <label for="DistrictInput" style="visibility: hidden">District</label>
+          <input class="form-control form-control-sm" type="text" placeholder="Enter District Here" formControlName="district">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="StreetInput" style="visibility: hidden">Street</label>
+          <input class="form-control form-control-sm" type="text" placeholder="Enter Street Here" formControlName="street">
+        </div>
+      </div>
+
+      <label for="DescriptionInput">Description</label>
+      <div class="row">
+        <div class="form-group col-md-9 mb-2">
+          <input class="form-control form-control-sm" type="text" placeholder="Enter Description Here" formControlName="description">
+        </div>
+        <div class="form-group col-md-3 mb-2">
+          <button type="button" class="reset-btn" (click)="resetForm()">Reset Form</button>
+          <button type="submit" [disabled]="addressForm.invalid" class="btn btn-primary add-addr btn-sm">Submit Address</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h3 style="font-weight: 200">Update or Delete an Customer Address</h3>
+  </div>
+  <div class="row tableStyling">
+    <div class="col topPart">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-12"><h2><b>Address Table</b></h2></div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Surname</th>
+              <th scope="col">Description</th>
+              <th scope="col">City</th>
+              <th scope="col">Town</th>
+              <th scope="col">District</th>
+              <th scope="col">Street</th>
+              <th scope="col">PhoneNumbers</th>
+            </tr>
+          </thead>
+          <!-- BIND ARRAY TO TABLE -->
+          <tbody #tbody>
+            <tr *ngFor="let item of addressRows; let i = index">
+              <td>
+                <a class="update" scope="row" (click)="updAddress(item,i)" title="Update"><i class="material-icons">&#xE254;</i></a>
+                <a class="delete" scope="row" (click)="delAddress(item,i)" title="Delete"><i class="material-icons">&#xE872;</i></a>
+              </td>
+              <td>{{ i+1 }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.surname }}</td>
+              <td>{{ item.description }}</td>
+              <td>{{ item.address.city }}</td>
+              <td>{{ item.address.town }}</td>
+              <td>{{ item.address.district }}</td>
+              <td>{{ item.address.street }}</td>
+              <td>
+                <select class="form-control">
+                  <option *ngFor="let phone of item.phoneNumbers;">
+                    {{ phone }}
+                  </option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</form>
