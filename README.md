@@ -1,6 +1,4 @@
 # eCommerceApp
-•	Projenin örnek çalıştırılma videosuna bu linkten ulaşabilirsiniz: https://www.youtube.com/watch?v=BphqbTPOuM0&feature=youtu.be 
-
 •	Projede sunucu tarafındaki kodlar NodeJS Express ile yazılmıştır.
 
 •	CRUD operasyonlarında kullanılacak bilgiler ücretsiz MongoDB Atlas cloudunda saklanmıştır.
